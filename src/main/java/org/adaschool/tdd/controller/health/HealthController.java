@@ -10,8 +10,7 @@ public class HealthController
 {
 
     @GetMapping
-    public String all()
-    {
+    public String all() {
         return "API Working OK!";
     }
 }

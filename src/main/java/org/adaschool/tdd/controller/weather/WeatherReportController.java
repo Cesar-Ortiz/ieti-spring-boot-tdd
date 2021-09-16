@@ -46,7 +46,7 @@ public class WeatherReportController
     @GetMapping( "reporter/{id}" )
     public List<WeatherReport> findByReporterId( @PathVariable String name )
     {
-        return weatherService.findWeatherReportsByName( name );
+        return weatherService.findWeatherReportsByName(name);
     }
 
 

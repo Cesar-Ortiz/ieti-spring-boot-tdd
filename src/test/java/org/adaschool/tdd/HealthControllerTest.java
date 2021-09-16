@@ -9,8 +9,7 @@ import org.springframework.boot.web.server.LocalServerPort;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @SpringBootTest( webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT )
-public class HealthControllerTest
-{
+public class HealthControllerTest {
     @LocalServerPort
     private int port;
 
@@ -18,11 +17,7 @@ public class HealthControllerTest
     private TestRestTemplate restTemplate;
 
     @Test
-    public void greetingShouldReturnDefaultMessage()
-        throws Exception
-    {
-        assertThat(
-            this.restTemplate.getForObject( "http://localhost:" + port + "/v1/health", String.class ) ).contains(
-            "API Working OK!" );
+    public void greetingShouldReturnDefaultMessage() throws Exception {
+        assertThat(this.restTemplate.getForObject( "http://localhost:" + port + "/v1/health", String.class ) ).contains("API Working OK!" );
     }
 }
