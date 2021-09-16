@@ -1,5 +1,6 @@
 package org.adaschool.tdd.repository.document;
 
+import org.adaschool.tdd.controller.weather.dto.WeatherReportDto;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -23,6 +24,14 @@ public class WeatherReport
     String reporter;
 
     Date created;
+
+    public WeatherReport(WeatherReportDto weatherReportDto){
+        this.geoLocation = weatherReportDto.getGeoLocation();
+        this.temperature = weatherReportDto.getTemperature();
+        this.humidity = weatherReportDto.getHumidity();
+        this.reporter = weatherReportDto.getReporter();
+        this.created = weatherReportDto.getCreated();
+    }
 
     public WeatherReport( GeoLocation geoLocation, double temperature, double humidity, String reporter, Date created )
     {
